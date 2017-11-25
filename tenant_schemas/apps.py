@@ -88,6 +88,9 @@ def best_practice(app_configs, **kwargs):
 
     if not set(settings.SHARED_APPS).issubset(INSTALLED_APPS):
         delta = set(settings.SHARED_APPS).difference(INSTALLED_APPS)
+        print "++++++++++++++++++++++"
+        print INSTALLED_APPS
+        print "++++++++++++++++++++++"
         errors.append(
             Error("You have SHARED_APPS that are not in INSTALLED_APPS",
                   hint=[a for a in settings.SHARED_APPS if a in delta],
